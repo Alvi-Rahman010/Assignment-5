@@ -88,4 +88,69 @@ body {
     font-weight: 600;
     cursor: pointer;
 }
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.hero-left h1 {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #f97316, #ec4899, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-left p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-explore {
+    background: linear-gradient(90deg, #f97316, #ec4899);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-learn {
+    background: white;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
 
