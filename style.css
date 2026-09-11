@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -87,6 +88,7 @@ body {
     font-weight: 600;
     cursor: pointer;
 }
+
 .hero {
     display: flex;
     justify-content: space-between;
@@ -111,7 +113,6 @@ body {
 .gradient-text {
     background: linear-gradient(90deg, #f97316, #ec4899, #8b5cf6);
     -webkit-background-clip: text;
-    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -120,6 +121,7 @@ body {
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 30px;
+    max-width: 480px;
 }
 
 .hero-btns {
@@ -153,31 +155,11 @@ body {
     display: flex;
     justify-content: center;
 }
-.hero-card {
-    background: #fdf2f8;
-    border: 1px solid #fce7f3;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    max-width: 350px;
-}
 
-.banner-img {
+.hero-banner {
     width: 100%;
-    max-width: 200px;
-    margin-bottom: 15px;
-}
-
-.hero-card h3 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #222;
-    margin-bottom: 5px;
-}
-
-.hero-card p {
-    font-size: 12px;
-    color: #666;
+    max-width: 400px;
+    object-fit: contain;
 }
 
 .section-title {
@@ -452,3 +434,4 @@ body {
     color: #dc2626;
 }
 
+/* Footer Styling */
