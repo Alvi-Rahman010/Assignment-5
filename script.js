@@ -164,3 +164,65 @@ function addToStack(id) {
     renderStack();
 }
 
+function removeFromStack(id) {
+    let newStack = [];
+    for (let i = 0; i < stack.length; i++) {
+        if (stack[i].id !== id) {
+            newStack.push(stack[i]);
+        }
+    }
+    stack = newStack;
+
+    renderTechnologies();
+    renderStack();
+}
+
+const removeAllBtn = document.getElementById('remove-all-btn');
+removeAllBtn.addEventListener('click', function() {
+    stack = [];
+    renderTechnologies();
+    renderStack();
+});
+
+function renderStack() {
+    let stackContainer = document.getElementById('stack-container');
+    let stackCount = document.getElementById('stack-count');
+
+    if (stack.length === 0) {
+        stackCount.innerText = "No technologies selected yet.";
+        removeAllBtn.classList.add('hidden');
+        stackContainer.innerHTML = `
+            <div class="empty-stack">
+                <p>No technologies selected yet.</p>
+                <div class="empty-box">Your stack is empty.</div>
+            </div>
+        `;
+        return;
+    }
+
+    stackCount.innerText = stack.length + " Technology Selected";
+    removeAllBtn.classList.remove('hidden');
+    stackContainer.innerHTML = '';
+
+    for (let i = 0; i < stack.length; i++) {
+        let item = stack[i];
+        let itemDiv = document.createElement('div');
+        itemDiv.className = 'stack-item-card';
+
+        itemDiv.innerHTML = `
+            <div class="stack-item-left">
+                <img src="${item.icon}" alt="${item.name}">
+                <div class="stack-item-info">
+                    <h4>${item.name}</h4>
+                    <span>${item.category}</span>
+                </div>
+            </div>
+            <button onclick="removeFromStack('${item.id}')" class="btn-remove-item">✕</button>
+        `;
+
+        stackContainer.appendChild(itemDiv);
+    }
+}
+
+renderTechnologies();
+renderStack();
